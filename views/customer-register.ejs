@@ -1,0 +1,26 @@
+<!-- form.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("partials/head") %>
+</head>
+<body>
+  <%- include("partials/nav") %>
+  <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <form action="/customer-register" method="post" class="w-100" style="max-width: 400px;">
+      <h5>Customer Register Form</h5>
+      <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="firstName" name="firstName">
+      </div>
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastName" name="lastName">
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

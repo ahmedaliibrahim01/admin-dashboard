@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("partials/head") %>
+  </head>
+  <body>
+    <%- include("partials/nav") %>
+
+    <div class="container mt-5">
+      <h1 class="mb-4">Customer List</h1>
+      <div class="card p-4 shadow-sm">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% data.forEach((admin, index) => { %>
+            <tr>
+              <th scope="row"><%= index + 1 %></th>
+              <td><%= admin.firstName %></td>
+              <td><%= admin.lastName %></td>
+              <td>
+                <a
+                  href="/customer-list/<%= admin.id %>"
+                  class="btn btn-sm btn-warning"
+                  >Edit</a
+                >
+                <a href="/customer-list/<%= admin.id %>" class="btn btn-sm btn-danger"
+                  >Delete</a
+                >
+              </td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

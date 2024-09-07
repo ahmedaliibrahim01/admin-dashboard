@@ -19,20 +19,22 @@
             </tr>
           </thead>
           <tbody>
-            <% data.forEach((admin, index) => { %>
+            <% data.forEach((customer, index) => { %>
             <tr>
               <th scope="row"><%= index + 1 %></th>
-              <td><%= admin.firstName %></td>
-              <td><%= admin.lastName %></td>
+              <td><%= customer.firstName %></td>
+              <td><%= customer.lastName %></td>
               <td>
                 <a
-                  href="/customer-list/<%= admin.id %>"
+                  href="/customer-edit/<%= customer.id %>"
                   class="btn btn-sm btn-warning"
                   >Edit</a
                 >
-                <a href="/customer-list/<%= admin.id %>" class="btn btn-sm btn-danger"
-                  >Delete</a
-                >
+                  <a
+                    href="/customer-delete/<%= customer.id %>"
+                    class="btn btn-sm btn-danger"
+                    >Delete</a
+                  >
               </td>
             </tr>
             <% }); %>
@@ -40,5 +42,6 @@
         </table>
       </div>
     </div>
+    <%- include("partials/body") %>
   </body>
-</html>
+  </html>
